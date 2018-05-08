@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="/js/bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script th:inline="javascript">
+function clickAction(){
+	alert(/*[[${rcvNum}]]*/);
+}
+</script>
+</head>
+<body>
+	<table class="table table-bordered table-hover">
+		<tr class="bg-success">
+			<td>変数式</td>
+			<td>表示</td>
+		</tr>
+		<tr>
+			<td>${isEven}?${treuMsg}:${falseMsg}</td>
+			<td th:text="${isEven}?${treuMsg}:${falseMsg}"></td>
+		</tr>
+		<tr>
+			<td>th:if=${isEven} th:text="${trueMsg}"</td>
+			<td th:if=${isEven} th:text="${trueMsg}"></td>
+		</tr>
+		<tr>
+			<td>th:unless=${isEven} th:text="${falseMsg}"</td>
+			<td th:unless=${isEven} th:text="${falseMsg}"></td>
+		</tr>
+		<tr>
+			<td>
+				th:switch="${isEvenNum}"<br>
+				&lt;p th:case="0" th:text="${trueMsg}"&gt;&lt;/p&gt;<br/>
+				&lt;p th:case="1" th:text="${falseMsg}"&gt;&lt;/p&gt;
+			</td>
+			<td>
+				<div th:switch="${isEvenNum}">
+					<p th:case="0" th:text="${trueMsg}"></p>
+					<p th:case="1" th:text="${falseMsg}"></p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&lt;table class="table table-bordered"&gt;<br>
+					&lt;tr th:each="family: ${families}"&gt;<br>
+						&lt;td th:text="${family[0]}"&gt;&lt;/td&gt;<br>
+						&lt;td th:text="${family[1]}"&gt;&lt;/td&gt;<br>
+					&lt;/tr&gt;<br>
+				&lt;/table&gt;
+			</td>
+			<td>
+				<table class="table table-bordered">
+					<tr th:each="family: ${families}">
+						<td th:text="${family[0]}"></td>
+						<td th:text="${family[1]}"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				&lt;tr th:each="family: ${families}" th:inline="text"&gt;<br>
+				&lt;/tr&gt;
+			</td>
+			<td th:inline="text">
+				<table class="table table-bordered">
+					<tr th:each="family: ${families}">
+						<td>[[${family[0]}]]</td><td>[[${family[1]}]]</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>JavaScriptインライン処理</td>
+			<td><button onClick="clickAction()" class="btn btn-outline-primary">Click</button></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+<!--
+<tr>
+			<td></td>
+			<td th:text=""></td>
+		</tr>
+ -->

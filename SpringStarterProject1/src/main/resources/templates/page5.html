@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+<script src="/js/jquery-3.3.1.min.js"
+	th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="/js/bootstrap.bundle.min.js"
+	th:src="@{/js/bootstrap.bundle.min.js}"></script>
+<script type="text/javascript">
+	$(function(){
+		$('th').addClass('info')
+	});
+</script>
+</head>
+<body>
+	<h3 class="bg-info">オブジェクトを使用した変数式</h3>
+	<table class="table table-bordered table-hover" th:object="${obj}">
+		<tr><th>ID</th><td th:utext="*{id}">id</td></tr>
+		<tr><th>Name</th><td th:utext="*{name}">name</td></tr>
+	</table>
+	<br>
+	<h3 class="bg-info">HTMLコードの出力</h3>
+	<p th:utext="${html}">default</p>
+</body>
+</html>
+
+<!--
+<tr>
+			<td></td>
+			<td th:text=""></td>
+		</tr>
+ -->

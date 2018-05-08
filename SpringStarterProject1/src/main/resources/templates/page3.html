@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>INDEX</title>
+	<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script src="/js/bootstrap.bundle.min.js" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+	<p th:text="${msg}">フォームを入力して送信してください</p>
+	<div class="container">
+		<form method="POST">
+			<div class="form-group row">
+				<label for="name" class="col-sm-2 col-form-label">名前</label>
+				<div class="col-sm-8">
+					<input type="text" name="name" id="name" class="form-control">
+				</div>
+			</div>
+			<fieldset class="form-group">
+				<div class="row">
+					<legend class="col-form-label col-sm-2 pt-0">性別</legend>
+					<div  class="col-sm-10">
+						<div class="form-check">
+							<input type="radio" name="gender" id="man" value="man">
+							<label for="man"  class="form-check-label">男</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="gender" id="woman" value="woman">
+							<label for="woman"  class="form-check-label">女</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="form-group">
+				<div class="row">
+					<legend class="col-form-label col-sm-2 pt-0">成人ですか？</legend>
+					<div class="col-sm-10">
+						<div class="form-check">
+							<input type="checkbox" name="adult" id="adult">
+							<label class="form-check-label" for="adult">ここをチェック</label>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group">
+				<button class="btn btn-outline-primary" type="submit">送信</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

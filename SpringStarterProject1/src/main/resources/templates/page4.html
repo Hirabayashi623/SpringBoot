@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+<script src="/js/jquery-3.3.1.min.js"
+	th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="/js/bootstrap.bundle.min.js"
+	th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</head>
+<body>
+	<table class="table table-bordered table-hover">
+		<tr class="bg-success">
+			<td>変数式</td>
+			<td>表示</td>
+		</tr>
+		<tr>
+			<td>${new java.util.Date().toString()}</td>
+			<td th:text="${new java.util.Date().toString()}"></td>
+		</tr>
+		<tr>
+			<td>${#dates.format(new java.util.Date(), 'yyyy/MMM/dd HH:mm')}</td>
+			<td
+				th:text="${#dates.format(new java.util.Date(), 'yyyy/MMM/dd HH:mm')}"></td>
+		</tr>
+		<tr>
+			<td>${param.id[0]}</td>
+			<td th:text="${param.id[0]}"></td>
+		</tr>
+		<tr>
+			<td>#{content.message}</td>
+			<td th:text="#{content.message}"></td>
+		</tr>
+		<tr>
+			<td>@{'/4?id=123'}</td>
+			<td><a th:href="@{'/4?id=123'}">link</a></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+<!--
+<tr>
+			<td></td>
+			<td th:text=""></td>
+		</tr>
+ -->
