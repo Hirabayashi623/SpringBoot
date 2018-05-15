@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script src="/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+	<link href="/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"></link>
+</head>
+
+<div th:fragment="tbl_sample">
+	<table class="table table-bordered">
+		<tr class="success"><th>ID</th><th>NAME</th></tr>
+		<tr th:each="user: ${users}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.name}"></td>
+		</tr>
+	</table>
+</div>
+</html>
+

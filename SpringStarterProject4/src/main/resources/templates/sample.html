@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+
+</head>
+<body>
+	<table class="table table-bordered">
+		<tr class="success"><th>ID</th><th>NAME</th></tr>
+		<tr th:each="sample: ${samples}">
+			<td th:text="${sample.id}"></td>
+			<td th:text="${sample.name}"></td>
+		</tr>
+	</table>
+</body>
+</html>

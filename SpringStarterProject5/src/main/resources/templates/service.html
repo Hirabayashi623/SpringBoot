@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+</head>
+<body>
+	<a href="/service">Reload...</a>
+
+	<div class="container">
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">全件取得</a></li>
+		<li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">Rest</a></li>
+		<li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">Ajax</a></li>
+		<li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">Xml</a></li>
+	</ul>
+	<br>
+	<div class="tab-content embed-responsive embed-responsive-16by9">
+		<div id="tab1" class="embed-responsive-item tab-pane active"><iframe src="/service/getAll"></iframe></div>
+		<div id="tab2" class="embed-responsive-item tab-pane"><iframe src="/service/rest"></iframe></div>
+		<div id="tab3" class="embed-responsive-item tab-pane"><iframe src="/service/ajax"></iframe></div>
+		<div id="tab4" class="embed-responsive-item tab-pane"><iframe src="/service/xml"></iframe></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+
+</head>
+<body>
+	<a href="/update">Reload...</a>
+	<form action="/edit" method="POST">
+		<table class="table table-hover" th:object="${list}">
+			<tr class="bg-success table-bordered"><th>NAME</th><th>AGE</th></tr>
+			<tr th:each="data: ${list}">
+				<td th:text="${data.name}" class="table-bordered"></td>
+				<td th:text="${data.age}" class="table-bordered"></td>
+				<td><input class="btn btn-info" type="radio" name="id" th:value=${data.id}></td>
+			</tr>
+		</table>
+		<div class="text-right">
+			<button type="submit" class="btn btn-primary">更新画面へ</button>
+		</div>
+	</form>
+
+	<p th:text="${message}"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+</head>
+<body>
+	This is ajax page.
+
+	<table id="obj" class="table table-bordered"></table>
+
+	<script type="text/javascript" th:inline="javascript">
+		$(document).ready(function(){
+			$.get("/service/rest", null, callback);
+		});
+
+		function callback(result){
+			for(var i=0; i<result.length; i++){
+				$('#obj').append('<tr>');
+				$('#obj').append('<td>' + result[i].id + '</td>');
+				$('#obj').append('<td>' + result[i].name + '</td>');
+				$('#obj').append('</tr>');
+			}
+		}
+	</script>
+</body>
+</html>

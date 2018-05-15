@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+	<title th:text="${title}"></title>
+	<script src="/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+	<script src="/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+	<link href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"></link>
+</head>
+<body>
+<div th:fragment="message">
+	<p th:text="${message}"></p>
+	<ul>
+		<li th:each="msg: ${messages}" th:text="${msg}"></li>
+	</ul>
+</div>
+
+</body>
+</html>

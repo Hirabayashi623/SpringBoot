@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+</head>
+<body>
+<div class="p-3 container">
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">All</a></li>
+		<li class="nav-item"><a href="#tab2" class="nav-link" data-toggle="tab">And</a></li>
+		<li class="nav-item"><a href="#tab3" class="nav-link" data-toggle="tab">Or</a></li>
+		<li class="nav-item"><a href="#tab4" class="nav-link" data-toggle="tab">Between</a></li>
+		<li class="nav-item"><a href="#tab5" class="nav-link" data-toggle="tab">LessThan</a></li>
+		<li class="nav-item"><a href="#tab6" class="nav-link" data-toggle="tab">GreaterThan</a></li>
+		<li class="nav-item"><a href="#tab7" class="nav-link" data-toggle="tab">Like</a></li>
+		<li class="nav-item"><a href="#tab8" class="nav-link" data-toggle="tab">Desc</a></li>
+		<li class="nav-item"><a href="#tab9" class="nav-link" data-toggle="tab">Not</a></li>
+		<li class="nav-item"><a href="#tab10" class="nav-link" data-toggle="tab">In</a></li>
+	</ul>
+	<br>
+	<div class="tab-content embed-responsive embed-responsive-16by9">
+		<div id="tab1" class="embed-responsive-item tab-pane active"><iframe src="/jpql/all"></iframe></div>
+		<div id="tab2" class="embed-responsive-item tab-pane"><iframe src="/jpql/and"></iframe></div>
+		<div id="tab3" class="embed-responsive-item tab-pane"><iframe src="/jpql/or"></iframe></div>
+		<div id="tab4" class="embed-responsive-item tab-pane"><iframe src="/jpql/between"></iframe></div>
+		<div id="tab5" class="embed-responsive-item tab-pane"><iframe src="/jpql/lessthan"></iframe></div>
+		<div id="tab6" class="embed-responsive-item tab-pane"><iframe src="/jpql/greaterthan"></iframe></div>
+		<div id="tab7" class="embed-responsive-item tab-pane"><iframe src="/jpql/like"></iframe></div>
+		<div id="tab8" class="embed-responsive-item tab-pane"><iframe src="/jpql/desc"></iframe></div>
+		<div id="tab9" class="embed-responsive-item tab-pane"><iframe src="/jpql/not"></iframe></div>
+		<div id="tab10" class="embed-responsive-item tab-pane"><iframe src="/jpql/in"></iframe></div>
+	</div>
+</div>
+
+</body>
+</html>

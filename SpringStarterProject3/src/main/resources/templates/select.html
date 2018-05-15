@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+
+</head>
+<body>
+	<a href="/select">Reload...</a>
+	<table class="table table-bordered table-hover" th:object="${list}">
+		<tr class="bg-success"><th>ID</th><th>NAME</th><th>AGE</th></tr>
+		<tr th:each="data: ${list}">
+			<td th:text="${data.id}"></td>
+			<td th:text="${data.name}"></td>
+			<td th:text="${data.age}"></td>
+		</tr>
+	</table>
+</body>
+</html>

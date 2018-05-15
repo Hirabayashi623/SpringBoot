@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common :: header">
+</head>
+<body>
+	<form>
+		<button class="btn btn-info">クリックしてカントアップ</button>
+		<br>
+		<p th:text="${count}"></p>
+	</form>
+</body>
+</html>
